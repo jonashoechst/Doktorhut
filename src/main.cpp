@@ -294,24 +294,21 @@ void http_game(AsyncWebServerRequest *request) {
 void wifi_connect_sta() {
     WiFi.hostname(NAME);
     WiFi.mode(WIFI_AP_STA);
-    for (WiFiNetwork &network : networks) {
-        WiFi.begin(network.ssid.c_str(), network.psk.c_str());
-        Serial.printf("Connecting to WiFi '%s'.", network.ssid.c_str());
+    WiFi.begin(WIFI_SSID, WIFI_PSK);
+    Serial.printf("Connecting to WiFi '%s'.", WIFI_SSID);
 
-        for (int i = 0; i < 10; i++) {
-            if (WiFi.status() == WL_CONNECTED) break;
-            delay(1000);
-            Serial.print(".");
-        }
+    for (int i = 0; i < 10; i++) {
+        if (WiFi.status() == WL_CONNECTED) break;
+        delay(1000);
+        Serial.print(".");
+    }
 
-        if (WiFi.status() == WL_CONNECTED) {
-            Serial.print(" successful!\n");
-            Serial.print("IP Address: ");
-            Serial.println(WiFi.localIP());
-            break;
-        } else {
-            Serial.println(" failed.");
-        }
+    if (WiFi.status() == WL_CONNECTED) {
+        Serial.print(" successful!\n");
+        Serial.print("IP Address: ");
+        Serial.println(WiFi.localIP());
+    } else {
+        Serial.println(" failed.");
     }
 }
 
