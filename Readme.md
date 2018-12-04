@@ -1,4 +1,5 @@
-# Doktorhut
+# Doktorhut 
+[![Build Status](https://travis-ci.org/jonashoechst/Doktorhut.svg?branch=master)](https://travis-ci.org/jonashoechst/Doktorhut)
 
 *Der interaktive Doktorhut* ist ein Gimmick für Doktorhüte. Auf dem Hut wird ein **ESP8266** benötigt, der sowohl einen AP öffnet, als auch sich zu einem der konfigurierten WiFis verbindet. 
 
