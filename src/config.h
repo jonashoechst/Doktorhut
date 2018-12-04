@@ -7,7 +7,7 @@
 #ifndef WIFI_SSID
     #define WIFI_SSID ""
 #endif
-#ifndef WIFI_SSID
+#ifndef WIFI_PSK
     #define WIFI_PSK ""
 #endif
 
